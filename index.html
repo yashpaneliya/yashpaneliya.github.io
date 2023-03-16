@@ -1,182 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Yash Paneliya</title>
     <style>
-        html {
-            background-color: black;
-            padding: 0;
-            margin: 0;
-        }
-        
-        body {
-            background-color: black;
-            padding: 0;
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-        }
-        
-        ul{
-                position: absolute;
-                top:30%;
-                left:50%;
-                transform: translate(-50%,50%);
-                margin:0;
-                padding: 0;
-                display: flex;
-            }
-            ul li{
-                list-style: none;
-                font-family: arial;
-                font-size: 8em;
-                letter-spacing: 15px;
-                color: red;
-                text-shadow: none;
-                animation: animate 1s infinite;
-            }
+      html {
+        background-color: black;
+        padding: 0;
+        margin: 0;
+      }
 
-            @keyframes animate {
-                0%{
-                    color:black;
-                    text-shadow: none;;
-                }
-                18%{
-                    color:black;
-                    text-shadow: none;;
-                }
-                20%{
-                    color:red;
-                    text-shadow: 0 0 7px red,0 0 20px red;
-                }
-                30%{
-                    color:black;
-                    text-shadow: none;;
-                }
-                35%{
-                    color:red;
-                    text-shadow: 0 0 7px red,0 0 20px red;
-                }
-                70%{
-                    color:black;
-                    text-shadow: none;;
-                }
-                85%{
-                    color:red;
-                    text-shadow: 0 0 7px red,0 0 20px red;
-                }
-                90%{
-                    color:black;
-                    text-shadow: none;;
-                }
-                100%{
-                    color:black;
-                    text-shadow: none;;
-                }
-            }
+      body {
+        background-color: black;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+      }
 
-            ul li:nth-child(1)
-            {
-                animation-delay: .4s;
-            }
-            ul li:nth-child(2)
-            {
-                animation-delay: .1s;
-            }
-            ul li:nth-child(3)
-            {
-                animation-delay: .6s;
-            }
-            ul li:nth-child(4)
-            {
-                animation-delay: .8s;
-            }
-            ul li:nth-child(5)
-            {
-                animation-delay: .1s;
-            }
-            ul li:nth-child(6)
-            {
-                animation-delay: .5s;
-            }
-            ul li:nth-child(7)
-            {
-                animation-delay: 1.6s;
-            }
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        top: 45%;
+        width: 120px;
+        height: 120px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid rgb(212, 47, 47);
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 60px;
+          left: 60px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 120px;
+          height: 120px;
+          opacity: 0;
+        }
+      }
 
+      ul {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      ul li {
+        list-style: none;
+        font-family: arial;
+        font-size: 8em;
+        letter-spacing: 15px;
+        color: red;
+        text-shadow: none;
+        animation: animate 1s infinite;
+      }
 
-        {% comment %} .loader {
-            top: 68%;
-            position: fixed;
-            -webkit-perspective: 800px;
-            perspective: 800px;
+      @keyframes animate {
+        0% {
+          color: black;
+          text-shadow: none;
         }
-        
-        .loader>span {
-            font-size: 50px;
-            font-family: "franklin gothic medium", sans-serif;
-            display: inline-block;
-            animation: flip 1.5s infinite linear;
-            transform-origin: 0 70%;
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
+        18% {
+          color: black;
+          text-shadow: none;
         }
-        
-        @keyframes flip {
-            35% {
-                transform: rotateX(360deg);
-            }
-            100% {
-                transform: rotatex(360deg);
-            }
-        } {% endcomment %}
-{% comment %}         
-        .loader>span:nth-child(even) {
-            color: white;
+        20% {
+          color: red;
+          text-shadow: 0 0 7px red, 0 0 20px red;
         }
-        
-        .loader>span:nth-child(2) {
-            animation-delay: 0.2s;
+        30% {
+          color: black;
+          text-shadow: none;
         }
-        
-        .loader>span:nth-child(3) {
-            animation-delay: 0.3s;
+        35% {
+          color: red;
+          text-shadow: 0 0 7px red, 0 0 20px red;
         }
-        
-        .loader>span:nth-child(4) {
-            animation-delay: 0.4s;
+        70% {
+          color: black;
+          text-shadow: none;
         }
-        
-        .loader>span:nth-child(5) {
-            animation-delay: 0.5s;
+        85% {
+          color: red;
+          text-shadow: 0 0 7px red, 0 0 20px red;
         }
-        
-        .loader>span:nth-child(6) {
-            animation-delay: 0.6s
+        90% {
+          color: black;
+          text-shadow: none;
         }
-        
-        .loader>span:nth-child(7) {
-            animation-delay: 0.7s
-        } {% endcomment %}
+        100% {
+          color: black;
+          text-shadow: none;
+        }
+      }
+
+      ul li:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+      ul li:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      ul li:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      ul li:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      ul li:nth-child(5) {
+        animation-delay: 0.1s;
+      }
+      ul li:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      ul li:nth-child(7) {
+        animation-delay: 1.6s;
+      }
     </style>
     <script defer src="main.dart.js" type="application/javascript"></script>
-</head>
+  </head>
 
-<body>
-
-        <ul>
-            <li>L</li>
-            <li>O</li>
-            <li>A</li>
-            <li>D</li>
-            <li>I</li>
-            <li>N</li>
-            <li>G</li>
-        </ul>
+  <body>
+    <!-- <ul>
+      <li>L</li>
+      <li>O</li>
+      <li>A</li>
+      <li>D</li>
+      <li>I</li>
+      <li>N</li>
+      <li>G</li>
+    </ul> -->
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
     <!-- <div width=100% height=100%>
         <img src="assets/yp.jpg" width="200" height="200" style="position: fixed;
         top: 50%;
@@ -193,9 +167,7 @@
         <span>I</span>
         <span>N</span>
         <span>G</span>
-    </div> --> 
-     <script>
-    </script> 
-</body>
-
+    </div> -->
+    <script></script>
+  </body>
 </html>
